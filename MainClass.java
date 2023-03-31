@@ -10,7 +10,7 @@ class Generator
 
     public String generateRandom()
     {   
-        System.out.println("Choose what your passwords should contain:\n\nType '1' for 'Uppercase letters'\nType '2' for 'Lowercase letters'\nType '3' for 'Numbers'\nType '4' for 'Symbols'\n");
+        System.out.println("Choose what your passwords should contain:\n\nType '1' for 'Uppercase letters'\nType '2' for 'Lowercase letters'\nType '3' for 'Numbers'\nType '4' for 'Symbols'\nType '5' for all characters combined\n\n");
         
         Scanner sc = new Scanner(System.in);
         choice = sc.nextInt();
@@ -74,6 +74,16 @@ class Generator
                     {   
                         i--;
                     }
+                }
+                break;
+            }
+            case 5:
+            {
+                for(int i = 0;i<length;i++)
+                {
+                    char type = (char)(r.nextInt(127));
+
+                    password[i] = type;  
                 }
                 break;
             }
